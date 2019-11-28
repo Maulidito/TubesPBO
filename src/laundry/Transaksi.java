@@ -12,7 +12,7 @@ package laundry;
 public class Transaksi {
     Pegawai pegTerima;
     Pegawai pegAmbil;
-    List<Cucian> listCucian ;
+    //List<Cucian> listCucian ;
     
     public void setPegawaiTerima(Pegawai peg){
         
