@@ -5,6 +5,7 @@
  */
 package MODEL;
 
+import CONTROLLER.Database;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +15,11 @@ import java.util.List;
  */
 public class Customer extends Person{
     private String idcust;
-    int idx;
+ 
     
     
     public Customer(String nama, String kelamin, String tgl_lahir, String alamat) {
         super(nama, kelamin, tgl_lahir, alamat);
-        idcust = "001";
     }
 
    
@@ -29,7 +29,24 @@ public class Customer extends Person{
 
    
     public void setIdcust(String idcust) {
-        this.idcust = idcust;
+        if (idcust.equals("")){
+            this.idcust = "C001";
+        }else{
+            int id= Integer.valueOf(idcust.substring(1));
+            id++;
+            if (id<10){
+                this.idcust = "C00";
+            }else if (id<100){
+                this.idcust = "C0";
+            }else{
+                this.idcust = "C";
+            }
+            this.idcust = this.idcust + String.valueOf(id);
+            
+        }
+    }
+    public void setID(String id){
+        this.idcust = id;
     }
 
    

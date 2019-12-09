@@ -12,6 +12,7 @@ package MODEL;
 public class Sepatu extends Cucian{
     private int pasang;
     private int hargasepatu;
+    
 
     public Sepatu(int pasang) {
         super(pasang * 25000);

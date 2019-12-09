@@ -19,7 +19,9 @@ abstract class Cucian {
     public int getTotalHarga() {
         return TotalHarga;
     }
+
     
+ 
     
     
     
