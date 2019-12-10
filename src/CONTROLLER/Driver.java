@@ -11,9 +11,7 @@ package CONTROLLER;
  */
 public class Driver {
     public static void main(String[] args) {
-         //new ControllerPegawai();
             new ControllerUIMain();
-           //new ControllerPakaian();
     }
     
 }

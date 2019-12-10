@@ -147,7 +147,7 @@ public class Admin_Transaksi extends javax.swing.JFrame {
                         .addComponent(jBDelete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jBKembali)
-                        .addGap(22, 22, 22))))
+                        .addGap(63, 63, 63))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +282,7 @@ public void addActionListener(ActionListener e){
     jBDelete.addActionListener(e);
     jBKembali.addActionListener(e);
     jBUpdate.addActionListener(e);
-    jBKembali.addActionListener(e);
+
 
 }
 }

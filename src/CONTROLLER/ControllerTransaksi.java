@@ -74,14 +74,16 @@ public class ControllerTransaksi implements  ActionListener{
         Object source = ae.getSource();
         if (View.getKembali().equals(source)){
             View.setVisible(false);
-            try{
+            if(pegawai != null){
                 new ControllerHomePegawai(pegawai);
-            }catch (NullPointerException e){
+            }else{
+            System.out.println("INI BENER");
                 new ControllerUIMain();
             }
             }
-        }
     }
+}
+    
 
  
     

@@ -18,7 +18,7 @@ import javax.swing.JTable;
  * @author Maulidito
  */
 public class ControllerAdmin_Transaksi implements ActionListener{
-    final private Admin_Transaksi View;
+    private Admin_Transaksi View;
     private Database db;
     private JTable table;
     private JComboBox combobox;
@@ -51,8 +51,9 @@ public class ControllerAdmin_Transaksi implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         Object source  = ae.getSource();
         db = new Database();
+        View.setVisible(false);
         if (View.getjBCreate().equals(source)){
-            View.setVisible(false);
+
             new ControllerPakaian(db.searchPegawai(combobox.getSelectedItem().toString()),true);
         
         }else if (View.getjBDelete().equals(source)){
@@ -60,20 +61,16 @@ public class ControllerAdmin_Transaksi implements ActionListener{
             String idselectedrow = (String) table.getValueAt(selected, 0);   
             db.delTransaksi(idselectedrow);
             table.removeRowSelectionInterval(selected, selected);
-            View.setVisible(false);
+
             new ControllerAdmin_Transaksi();
         
         }else if (View.getjBUpdate().equals(source)){
             int selectedrow = table.getSelectedRow();
             String idselectedrow = (String) table.getValueAt(selectedrow, 0);
-            View.setVisible(false);
             new ControllerPakaian(db.searchidTransaksi(idselectedrow));
-            
-        
+               
         }else if (View.getjBKembali().equals(source)){
-            View.setVisible(false);
             new ControllerAdmin();
-        
         }
         
     }
