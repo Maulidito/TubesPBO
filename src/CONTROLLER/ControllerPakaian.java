@@ -17,6 +17,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -29,6 +30,7 @@ public class ControllerPakaian implements ActionListener{
     private String selectedC,selectedP;
     private Pegawai pegawai;
     private JButton proses;
+    private JRadioButton R_siap,R_prosse;
     String idTransaksi;
     private boolean transaksi,loginadmin = false;
     
@@ -37,8 +39,11 @@ public class ControllerPakaian implements ActionListener{
         View = new Pakaian();
         J = new JComboBox();
         View.setVisible(true);
+        this.loginadmin = loginadmin;
         View.getjLTransaksi().setVisible(false);
         View.getjCPegawai().setVisible(false);
+        View.getjRSiap().setVisible(false);
+        View.getjRProses().setVisible(false);
         this.pegawai = pegawai;
         View.addActionListener(this);
         for (Customer C : db.getCustomer()){
@@ -54,10 +59,15 @@ public class ControllerPakaian implements ActionListener{
         View = new Pakaian();
         J = new JComboBox();
         View.setVisible(true);
+        R_prosse = View.getjRProses();
+        R_siap = View.getjRSiap();
         transaksi = true;
         loginadmin = true;
         for (Pegawai P : db.getPegawai()){
             View.setjCPegawai(P.getNama());
+        }
+        for (Customer C : db.getCustomer()){
+           View.setjCCustomer(C.getNama());
         }
         this.idTransaksi = T.getTransaksiId();
         View.getjCPegawai().setSelectedItem(T.getPegTerima().getNama());
@@ -66,8 +76,13 @@ public class ControllerPakaian implements ActionListener{
         View.getjLTransaksi().setVisible(true);
         View.setjLTransaksi("Akan Melakukan Update dari Pegawai"+T.getPegTerima().getNama());
         View.addActionListener(this);
-        for (Customer C : db.getCustomer()){
-           View.setjCCustomer(C.getNama());
+
+        if (T.getStatus().equals("Proses")){
+            R_prosse.setSelected(true);
+          
+        }else{
+              System.out.println(T.getStatus());
+            R_siap.setSelected(true);
         }
     }
     
@@ -103,6 +118,7 @@ public class ControllerPakaian implements ActionListener{
                 View.setVisible(false);
                 TransaksiM T = new TransaksiM(this.pegawai, db.searchCustomer(selectedC), Integer.parseInt(View.getPakaian()) ,Integer.parseInt(View.getSepatu()), Integer.parseInt(View.getHargaPakaian()));
                 T.setID(db.LastidTransaksi());
+                
                 db.addTransaksi(T);
                 if (loginadmin){
                     new ControllerAdmin_Transaksi();
@@ -116,6 +132,7 @@ public class ControllerPakaian implements ActionListener{
                 System.out.println(db.searchPegawai(selectedP).getNama()+" "+ db.searchCustomer(selectedC).getNama());
                 TransaksiM T = new TransaksiM(db.searchPegawai(selectedP), db.searchCustomer(selectedC), Integer.parseInt(View.getPakaian()) ,Integer.parseInt(View.getSepatu()), Integer.parseInt(View.getHargaPakaian()));
                 T.setTransaksiId(idTransaksi);
+                T.setStatus(View.getButtonGroup1());
                 System.out.println(T.getTransaksiId());
                 db.updateTransaksi(T);
                 View.setVisible(false);

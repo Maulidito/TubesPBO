@@ -3,9 +3,11 @@ package View;
 
 import java.awt.TextField;
 import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JRadioButton;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -41,6 +43,7 @@ public class Pakaian extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jDialog1 = new javax.swing.JDialog();
         jMenu1 = new javax.swing.JMenu();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         JTPakaian = new java.awt.TextField();
         jlabel1 = new java.awt.Label();
@@ -57,6 +60,8 @@ public class Pakaian extends javax.swing.JFrame {
         jCCustomer = new javax.swing.JComboBox<>();
         jLTransaksi = new javax.swing.JLabel();
         jCPegawai = new javax.swing.JComboBox<>();
+        jRSiap = new javax.swing.JRadioButton();
+        jRProses = new javax.swing.JRadioButton();
 
         jMenu3.setText("jMenu3");
 
@@ -157,6 +162,13 @@ public class Pakaian extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(jRSiap);
+        jRSiap.setSelected(true);
+        jRSiap.setText("Siap");
+
+        buttonGroup1.add(jRProses);
+        jRProses.setText("Proses");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -189,7 +201,12 @@ public class Pakaian extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(hargaPakaian, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel3)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(142, 142, 142)
+                                        .addComponent(jRSiap)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jRProses))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(31, 31, 31)
                                 .addComponent(jCCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -231,7 +248,10 @@ public class Pakaian extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel2)
                                 .addComponent(JTSepatu, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3)
+                                .addComponent(jRSiap)
+                                .addComponent(jRProses)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
@@ -390,6 +410,34 @@ public class Pakaian extends javax.swing.JFrame {
     public JButton getKembali() {
         return Kembali;
     }
+
+    public String getButtonGroup1() {
+        if (getjRSiap().isSelected()){
+            return "Siap";
+        }else{
+            return "Proses";
+        }
+    }
+
+    public void setButtonGroup1(ButtonGroup buttonGroup1) {
+        this.buttonGroup1 = buttonGroup1;
+    }
+
+    public JRadioButton getjRProses() {
+        return jRProses;
+    }
+
+    public void setjRProses(JRadioButton jRProses) {
+        this.jRProses = jRProses;
+    }
+
+    public JRadioButton getjRSiap() {
+        return jRSiap;
+    }
+
+    public void setjRSiap(JRadioButton jRSiap) {
+        this.jRSiap = jRSiap;
+    }
     
     
     
@@ -402,6 +450,7 @@ public class Pakaian extends javax.swing.JFrame {
     private java.awt.TextField JTSepatu;
     private javax.swing.JButton Kembali;
     private javax.swing.JButton Proses;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel hargaPakaian;
     private javax.swing.JComboBox<String> jCCustomer;
     private javax.swing.JComboBox<String> jCPegawai;
@@ -416,6 +465,8 @@ public class Pakaian extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JRadioButton jRProses;
+    private javax.swing.JRadioButton jRSiap;
     private java.awt.Label jlabel1;
     private java.awt.Label label2;
     private java.awt.Label tabelnama;

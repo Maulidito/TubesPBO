@@ -11,6 +11,7 @@ import View.Admin_Transaksi;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 /**
@@ -41,6 +42,8 @@ public class ControllerAdmin_Transaksi implements ActionListener{
             table.setValueAt(T.getTotalsatuTransaksi(0)/5000, i, 3);
             table.setValueAt(T.getTotalsatuTransaksi(1)/25000, i, 4);
             table.setValueAt(T.getTotalHarga(T), i, 5);
+            table.setValueAt(T.getStatus(), i, 6);
+            
             i++;
         }
     }
@@ -71,6 +74,23 @@ public class ControllerAdmin_Transaksi implements ActionListener{
                
         }else if (View.getjBKembali().equals(source)){
             new ControllerAdmin();
+        }else if (View.getjBSiap().equals(source)){
+               try{
+                int selected = table.getSelectedRow();
+                String selected_id = (String) table.getValueAt(selected, 0);
+                System.out.println("NULLL");
+                TransaksiM T = db.searchidTransaksi(selected_id);
+                T.StatusSiap();
+                db.updateTransaksi(T);
+                new ControllerAdmin_Transaksi();
+            }catch(NullPointerException e){
+                 View.setVisible(true);
+                JOptionPane.showMessageDialog(View, "Pilih Kolom Transaksi");
+            }catch(ArrayIndexOutOfBoundsException e){
+                View.setVisible(true);
+                JOptionPane.showMessageDialog(View, "Pilih Kolom Transaksi");
+            }
+        
         }
         
     }

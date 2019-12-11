@@ -14,9 +14,13 @@ import java.util.List;
  * @author User
  */
 public class TransaksiM {
+    private final String siap_status = "Siap";
+    private final String belum_status= "Proses";
     private String TransaksiId; 
     private Pegawai pegTerima;
     private Customer customer;
+    private String Status;
+    
     private ArrayList<Integer> TotalHarga = new ArrayList<>();
     private ArrayList<Cucian> cucian = new ArrayList<>();
     
@@ -26,6 +30,7 @@ public class TransaksiM {
         this.cucian.add(new Pakaian(pakaian));
         this.cucian.add(new Sepatu(sepatu));
         TotalHarga.add(harga);
+        this.Status = belum_status;
     }
 
     public String getTransaksiId() {
@@ -102,6 +107,21 @@ public class TransaksiM {
         }
     
     }
+
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
+    
+
+    public void StatusSiap() {
+        this.Status = siap_status;
+    }
+
+    public String getStatus() {
+        return Status;
+        
+    }
+    
         
     
 

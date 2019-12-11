@@ -44,6 +44,7 @@ public class Admin_Transaksi extends javax.swing.JFrame {
         jBUpdate = new javax.swing.JButton();
         jBDelete = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jBSiap = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,7 +75,7 @@ public class Admin_Transaksi extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Kode Laundry", "Nama Pegawai", "Nama Customer", "Sepatu (pasang)", "Baju (kg)", "Harga", "Siap/Belum"
+                "Kode Laundry", "Nama Pegawai", "Nama Customer", "Sepatu (pasang)", "Baju (kg)", "Harga", "Status"
             }
         ) {
             Class[] types = new Class [] {
@@ -111,54 +112,66 @@ public class Admin_Transaksi extends javax.swing.JFrame {
 
         jLabel3.setText("Pegawai");
 
+        jBSiap.setText("Siap");
+        jBSiap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSiapActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(289, 289, 289)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel3)))
+                .addGap(23, 23, 23)
+                .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 570, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBCreate)
-                        .addGap(44, 44, 44)
-                        .addComponent(jBUpdate)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBDelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBKembali)
-                        .addGap(63, 63, 63))))
+                                .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jCPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jBCreate)
+                                .addGap(44, 44, 44)
+                                .addComponent(jBUpdate)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBDelete)
+                                .addGap(68, 68, 68)
+                                .addComponent(jBSiap, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 71, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(289, 289, 289)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBKembali)
+                .addGap(97, 97, 97))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jBKembali)
+                        .addGap(21, 21, 21)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel3)
@@ -169,7 +182,7 @@ public class Admin_Transaksi extends javax.swing.JFrame {
                         .addComponent(jBCreate)
                         .addComponent(jBUpdate)
                         .addComponent(jBDelete)
-                        .addComponent(jBKembali)))
+                        .addComponent(jBSiap)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -179,6 +192,10 @@ public class Admin_Transaksi extends javax.swing.JFrame {
     private void jBKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBKembaliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBKembaliActionPerformed
+
+    private void jBSiapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSiapActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBSiapActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,6 +275,10 @@ public class Admin_Transaksi extends javax.swing.JFrame {
     public void setjBUpdate(JButton jBUpdate) {
         this.jBUpdate = jBUpdate;
     }
+
+    public JButton getjBSiap() {
+        return jBSiap;
+    }
     
     
     
@@ -268,6 +289,7 @@ public class Admin_Transaksi extends javax.swing.JFrame {
     private javax.swing.JButton jBCreate;
     private javax.swing.JButton jBDelete;
     private javax.swing.JButton jBKembali;
+    private javax.swing.JButton jBSiap;
     private javax.swing.JButton jBUpdate;
     private javax.swing.JComboBox<String> jCPegawai;
     private javax.swing.JLabel jLabel1;
@@ -282,6 +304,7 @@ public void addActionListener(ActionListener e){
     jBDelete.addActionListener(e);
     jBKembali.addActionListener(e);
     jBUpdate.addActionListener(e);
+    jBSiap.addActionListener(e);
 
 
 }

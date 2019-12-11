@@ -37,6 +37,7 @@ public class Transaksi extends javax.swing.JFrame {
         Kembali = new javax.swing.JButton();
         searchKode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jBSiap = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,7 +68,7 @@ public class Transaksi extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Kode Laundry", "Nama Customer", "Sepatu (pasang)", "Baju (kg)", "Harga", "Siap/Belum"
+                "Kode Laundry", "Nama Customer", "Sepatu (pasang)", "Baju (kg)", "Harga", "Status"
             }
         ) {
             Class[] types = new Class [] {
@@ -85,6 +86,7 @@ public class Transaksi extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        JTTransaksi.setToolTipText("");
         jScrollPane2.setViewportView(JTTransaksi);
 
         Kembali.setText("Kembali");
@@ -96,6 +98,8 @@ public class Transaksi extends javax.swing.JFrame {
 
         jLabel2.setText("Find Kode Laundry :");
 
+        jBSiap.setText("Siap");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,19 +110,22 @@ public class Transaksi extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(289, 289, 289)
+                                    .addComponent(jLabel1)
+                                    .addGap(273, 273, 273))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(39, 39, 39)
+                                    .addComponent(jLabel2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(289, 289, 289)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Kembali)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(273, 273, 273))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(41, 41, 41)
+                                .addComponent(jBSiap)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Kembali)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -134,7 +141,9 @@ public class Transaksi extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Kembali)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Kembali)
+                    .addComponent(jBSiap))
                 .addContainerGap())
         );
 
@@ -195,12 +204,20 @@ public class Transaksi extends javax.swing.JFrame {
     public void setJTTransaksi(JTable JTTransaksi) {
         this.JTTransaksi = JTTransaksi;
     }
+
+    public JButton getjBSiap() {
+        return jBSiap;
+    }
+
+
+    
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable JTTransaksi;
     private javax.swing.JButton Kembali;
+    private javax.swing.JButton jBSiap;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -209,5 +226,6 @@ public class Transaksi extends javax.swing.JFrame {
 
     public void AddActionListener(ActionListener e){
         Kembali.addActionListener(e);
+        jBSiap.addActionListener(e);
     }
 }

@@ -358,6 +358,7 @@ public class Database {
                 Customer cus = searchidCustomer(rs.getString("id_Customer"));
                 TransaksiM T = new TransaksiM(pega, cus,rs.getInt("JmlPakaian"),rs.getInt("JmlSepatu"),rs.getInt("TotalHarga"));
                 T.setTransaksiId(rs.getString("Id_Transaksi"));
+                T.setStatus(rs.getString("Proses"));
                 Transaksi.add(T);
             }
         } catch (SQLException ex) {
@@ -379,7 +380,8 @@ public class Database {
         query += "'" + m.getCustomer().getIdcust()+ "',";
         query += "'" + m.getTotalsatuTransaksi(0)/5000+ "',";
         query += "'" + m.getTotalsatuTransaksi(1)/25000+ "',";
-        query += "'" + m.getTotalHarga(m)+ "'"; 
+        query += "'" + m.getTotalHarga(m)+ "',"; 
+        query += "'" + m.getStatus()+ "'"; 
         query += ")";
         if (manipulate(query)) Transaksi.add(m);
         disconnect();
@@ -418,7 +420,8 @@ public class Database {
         query += " id_Customer='" + m.getCustomer().getIdcust()+ "',";
         query += " JmlPakaian ='" + m.getTotalsatuTransaksi(0)/5000+ "',";
         query += "JmlSepatu='" + m.getTotalsatuTransaksi(1)/25000+ "',";
-        query += "TotalHarga='" + m.getTotalHarga(m)+ " '"; 
+        query += "TotalHarga='" + m.getTotalHarga(m)+ "',"; 
+         query += "Proses='" + m.getStatus()+ " '"; 
         query += " WHERE id_Transaksi='" + m.getTransaksiId()+ "'";
         if (manipulate(query)){
             for (TransaksiM Tra : Transaksi) {
