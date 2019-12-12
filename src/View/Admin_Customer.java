@@ -11,7 +11,7 @@ import javax.swing.JTable;
 
 /**
  *
- * @author Maulidito
+ * @author ASUS
  */
 public class Admin_Customer extends javax.swing.JFrame {
 
@@ -33,18 +33,21 @@ public class Admin_Customer extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         jBCreate = new javax.swing.JButton();
-        jBUpdate = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jBDelete = new javax.swing.JButton();
+        jBUpdate = new javax.swing.JButton();
         jBKembali = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(750, 400));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -64,8 +67,7 @@ public class Admin_Customer extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CUSTOMER");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 730, 198));
 
         jBCreate.setText("Create Customer");
         jBCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -73,13 +75,9 @@ public class Admin_Customer extends javax.swing.JFrame {
                 jBCreateActionPerformed(evt);
             }
         });
+        getContentPane().add(jBCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
-        jBUpdate.setText("Update Customer");
-        jBUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBUpdateActionPerformed(evt);
-            }
-        });
+        jPanel1.setLayout(null);
 
         jBDelete.setText("Delete Customer");
         jBDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +85,17 @@ public class Admin_Customer extends javax.swing.JFrame {
                 jBDeleteActionPerformed(evt);
             }
         });
+        jPanel1.add(jBDelete);
+        jBDelete.setBounds(600, 290, 127, 25);
+
+        jBUpdate.setText("Update Customer");
+        jBUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBUpdateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBUpdate);
+        jBUpdate.setBounds(310, 290, 131, 25);
 
         jBKembali.setText("Kembali");
         jBKembali.addActionListener(new java.awt.event.ActionListener() {
@@ -94,51 +103,16 @@ public class Admin_Customer extends javax.swing.JFrame {
                 jBKembaliActionPerformed(evt);
             }
         });
+        jPanel1.add(jBKembali);
+        jBKembali.setBounds(340, 320, 77, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jBKembali)
-                        .addGap(150, 150, 150)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jBCreate)
-                .addGap(91, 91, 91)
-                .addComponent(jBUpdate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                .addComponent(jBDelete)
-                .addGap(74, 74, 74))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jBKembali)
-                        .addGap(5, 5, 5)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBUpdate)
-                    .addComponent(jBDelete)
-                    .addComponent(jBCreate))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("CUSTOMER");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(290, 20, 174, 28);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -227,6 +201,7 @@ public class Admin_Customer extends javax.swing.JFrame {
     private javax.swing.JButton jBKembali;
     private javax.swing.JButton jBUpdate;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

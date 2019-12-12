@@ -16,7 +16,7 @@ import javax.swing.JTextPane;
 
 /**
  *
- * @author Maulidito
+ * @author ASUS
  */
 public class Registrasi_Customer extends javax.swing.JFrame {
 
@@ -49,12 +49,18 @@ public class Registrasi_Customer extends javax.swing.JFrame {
         jTAlamat = new javax.swing.JTextPane();
         jLIdcustomer = new javax.swing.JLabel();
         jBCancel = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Nama");
+        jLabel1.setText("Nama :");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 69, -1));
 
-        jLabel2.setText("Alamat");
+        jLabel2.setText("Alamat :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 69, -1));
 
         try {
             jFtgl_lahir.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##-##-####")));
@@ -62,88 +68,58 @@ public class Registrasi_Customer extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFtgl_lahir.setToolTipText("00-00-0000");
+        getContentPane().add(jFtgl_lahir, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 157, -1));
 
         buttonGroup1.add(jRLaki);
         jRLaki.setSelected(true);
         jRLaki.setText("LAKI");
+        getContentPane().add(jRLaki, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         buttonGroup1.add(jRPerempuan);
         jRPerempuan.setText("PEREMPUAN");
+        getContentPane().add(jRPerempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
 
         jBDone.setText("Done");
+        getContentPane().add(jBDone, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
 
         jTNama.setToolTipText("sebagai Username");
+        jTNama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTNamaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 294, -1));
 
-        jLabel3.setText("Tanggal Lahir");
+        jLabel3.setText("Tanggal Lahir :");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
 
         jScrollPane1.setViewportView(jTAlamat);
 
-        jBCancel.setText("Cancel");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 294, 62));
+        getContentPane().add(jLIdcustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 19, 104, 32));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTNama, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(59, 59, 59)
-                                .addComponent(jFtgl_lahir, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRLaki)
-                                .addGap(36, 36, 36)
-                                .addComponent(jRPerempuan))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(jBDone)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBCancel)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLIdcustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLIdcustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFtgl_lahir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRLaki)
-                    .addComponent(jRPerempuan))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBDone)
-                    .addComponent(jBCancel))
-                .addGap(27, 27, 27))
-        );
+        jBCancel.setText("Cancel");
+        getContentPane().add(jBCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, -1, -1));
+
+        jPanel1.setLayout(null);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(30, 30, 650, 300);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\pic\\LAUNDROMATTTT.jpg")); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(0, 0, 700, 410);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNamaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTNamaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,6 +237,9 @@ public class Registrasi_Customer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRLaki;
     private javax.swing.JRadioButton jRPerempuan;
     private javax.swing.JScrollPane jScrollPane1;

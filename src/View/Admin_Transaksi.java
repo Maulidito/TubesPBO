@@ -45,11 +45,16 @@ public class Admin_Transaksi extends javax.swing.JFrame {
         jBDelete = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jBSiap = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
         jLabel1.setText("TRANSAKSI");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 13, -1, -1));
 
         JTTransaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,22 +100,32 @@ public class Admin_Transaksi extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(JTTransaksi);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 96, 730, 230));
+
         jBKembali.setText("Kembali");
         jBKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBKembaliActionPerformed(evt);
             }
         });
+        getContentPane().add(jBKembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, -1, -1));
+        getContentPane().add(searchKode, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 70, -1));
 
         jLabel2.setText("Find Kode Laundry :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        getContentPane().add(jCPegawai, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 99, -1));
 
         jBCreate.setText("Create Transaksi");
+        getContentPane().add(jBCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, -1, -1));
 
         jBUpdate.setText("Update Transaksi");
+        getContentPane().add(jBUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
 
         jBDelete.setText("Delete Transksi");
+        getContentPane().add(jBDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, -1, -1));
 
         jLabel3.setText("Pegawai");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
 
         jBSiap.setText("Siap");
         jBSiap.addActionListener(new java.awt.event.ActionListener() {
@@ -118,73 +133,20 @@ public class Admin_Transaksi extends javax.swing.JFrame {
                 jBSiapActionPerformed(evt);
             }
         });
+        getContentPane().add(jBSiap, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 112, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jBCreate)
-                                .addGap(44, 44, 44)
-                                .addComponent(jBUpdate)
-                                .addGap(18, 18, 18)
-                                .addComponent(jBDelete)
-                                .addGap(68, 68, 68)
-                                .addComponent(jBSiap, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 71, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(289, 289, 289)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBKembali)
-                .addGap(97, 97, 97))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(searchKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jBKembali)
-                        .addGap(21, 21, 21)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCPegawai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jBCreate)
-                        .addComponent(jBUpdate)
-                        .addComponent(jBDelete)
-                        .addComponent(jBSiap)))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
+        jPanel1.setLayout(null);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(0, 0, 750, 410);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\pic\\LAUNDROMATTTT.jpg")); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(0, 0, 750, 410);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -295,6 +257,9 @@ public class Admin_Transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField searchKode;
     // End of variables declaration//GEN-END:variables

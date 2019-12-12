@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Maulidito
+ * @author ASUS
  */
 public class Registrasi_Pegawai extends javax.swing.JFrame {
 
@@ -37,25 +37,44 @@ public class Registrasi_Pegawai extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jTNama = new javax.swing.JTextField();
+        jLIdpeg = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jTNama = new javax.swing.JTextField();
         jPpass = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jFtgl_lahir = new javax.swing.JFormattedTextField();
         jRLaki = new javax.swing.JRadioButton();
         jRPerempuan = new javax.swing.JRadioButton();
-        jBDone = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLIdpeg = new javax.swing.JLabel();
         jBCancel = new javax.swing.JButton();
+        jBDone = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLIdpeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 25, 141, 36));
 
-        jTNama.setToolTipText("sebagai Username");
+        jPanel1.setLayout(null);
 
         jLabel1.setText("Nama");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(210, 130, 69, 16);
+
+        jTNama.setToolTipText("sebagai Username");
+        jPanel1.add(jTNama);
+        jTNama.setBounds(350, 130, 157, 22);
+        jPanel1.add(jPpass);
+        jPpass.setBounds(350, 170, 157, 22);
 
         jLabel2.setText("Password");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(210, 170, 69, 16);
+
+        jLabel3.setText("Tanggal Lahir");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(210, 210, 78, 16);
 
         try {
             jFtgl_lahir.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##-##-####")));
@@ -63,80 +82,39 @@ public class Registrasi_Pegawai extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFtgl_lahir.setToolTipText("00-00-0000");
+        jPanel1.add(jFtgl_lahir);
+        jFtgl_lahir.setBounds(350, 210, 157, 22);
 
         buttonGroup1.add(jRLaki);
         jRLaki.setSelected(true);
         jRLaki.setText("LAKI");
+        jPanel1.add(jRLaki);
+        jRLaki.setBounds(340, 250, 53, 25);
 
         buttonGroup1.add(jRPerempuan);
         jRPerempuan.setText("PEREMPUAN");
-
-        jBDone.setText("Done");
-
-        jLabel3.setText("Tanggal Lahir");
+        jPanel1.add(jRPerempuan);
+        jRPerempuan.setBounds(410, 250, 99, 25);
 
         jBCancel.setText("Cancel");
+        jPanel1.add(jBCancel);
+        jBCancel.setBounds(440, 280, 71, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel3))
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jFtgl_lahir, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                            .addComponent(jTNama)
-                            .addComponent(jPpass)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jBDone)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRLaki)
-                                .addGap(36, 36, 36)
-                                .addComponent(jRPerempuan)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(jBCancel)))
-                .addContainerGap(169, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLIdpeg, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLIdpeg, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jPpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFtgl_lahir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRLaki)
-                    .addComponent(jRPerempuan))
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBDone)
-                    .addComponent(jBCancel))
-                .addGap(27, 27, 27))
-        );
+        jBDone.setText("Done");
+        jPanel1.add(jBDone);
+        jBDone.setBounds(370, 280, 61, 25);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(200, 110, 330, 210);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Desktop\\pic\\LAUNDROMATTTT.jpg")); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(0, 0, 750, 410);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -149,8 +127,6 @@ public class Registrasi_Pegawai extends javax.swing.JFrame {
         }
         
     }
-
-    
     
     public JButton getjBDone() {
         return jBDone;
@@ -263,6 +239,9 @@ public class Registrasi_Pegawai extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPpass;
     private javax.swing.JRadioButton jRLaki;
     private javax.swing.JRadioButton jRPerempuan;
@@ -272,6 +251,5 @@ public class Registrasi_Pegawai extends javax.swing.JFrame {
 public void addActionListener(ActionListener e){
     jBDone.addActionListener(e);
     jBCancel.addActionListener(e);
-
 }
 }
